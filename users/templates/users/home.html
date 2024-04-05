@@ -12,6 +12,7 @@
             {% csrf_token %}
             <button type="submit" class="nav-item nav-link" style="border: none; background: none; cursor: pointer;">Logout</button>
         </form>
+        <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
     {% else %}
         <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
         <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
