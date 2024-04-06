@@ -1,0 +1,36 @@
+{% extends 'users/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .travellers {
+            max-width: 800px; /* Set your desired max-width */
+            margin: 0 auto; /* Center the container */
+            padding: 20px; /* Add some padding */
+            border: 1px solid #ccc; /* Add a border for visualization */
+            border-radius: 10px; /* Add some border radius */
+            background-color: #f9f9f9; /* Add a background color */
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <br><br><br><br>
+    <div> <!-- Add the container div here -->
+        {% for user in users %}
+            <div class="travellers">
+                <h1 >{{ user.username }}</h1>
+                <a href="{% url 'send-interest' user.id %}"> Send Request</a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+<br><br><br><br><br><br><br><br>
+{% endblock content %}

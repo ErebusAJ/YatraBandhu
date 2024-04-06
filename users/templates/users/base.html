@@ -140,6 +140,7 @@
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'profile' %}">Profile</i></a></li>
+                <li><a href="{% url 'travellers' %}">Travel Buddy</i></a></li>
                 {% else %}
                 <li><a href="{% url 'landing' %}">Home</a></li>
                 <li><a href="#">Services</a></li>

@@ -1,7 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm, TravelPlanForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from friends.models import Friendship
+
 
 def register(request):
     if request.method == 'POST':
@@ -14,11 +17,6 @@ def register(request):
     else:
         form = UserRegisterForm()
     return render(request, 'users/register.html', {'form': form})
-
-
-@login_required
-def profile(request):
-    return render(request, 'users/profile.html')
 
 
 @login_required()
@@ -61,3 +59,38 @@ def home(request):
 
 def contact(request):
     return render(request, 'users/contact.html')
+
+
+# Profile 
+
+@login_required
+def profile(request):
+    user = request.user
+    received_requests = Friendship.objects.filter(to_user=request.user)
+    context = {
+        'user': user,
+        'received_requests': received_requests,
+    }
+    return render(request, 'users/profile.html', context)
+
+
+@login_required
+def send_friend_request(request, to_user_id):
+    to_user = get_object_or_404(User, pk=to_user_id)
+    Friendship.objects.create(from_user=request.user, to_user=to_user)
+    return redirect('profile')  # Redirect to the user's profile page
+
+@login_required
+def accept_friend_request(request, friendship_id):
+    friendship = get_object_or_404(Friendship, pk=friendship_id)
+    friendship.accepted = True
+    friendship.save()
+    return redirect('profile')  # Redirect to the user's profile page
+
+@login_required
+def reject_friend_request(request, friendship_id):
+    friendship = get_object_or_404(Friendship, pk=friendship_id)
+    friendship.delete()  # Or mark it as rejected if you want to keep the record
+    return redirect('profile')  # Redirect to the user's profile page
+
+    

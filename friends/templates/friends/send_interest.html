@@ -1,0 +1,41 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Interest</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional: Add your custom CSS here -->
+    <style>
+        /* Add custom styles if needed */
+    </style>
+</head>
+<body>
+    <br><br><br><br>
+    <br><br><br>
+    <div class="container mt-5"> <!-- Use Bootstrap container class for layout -->
+        <h1>Send Interest</h1>
+        <form method="post">
+            {% csrf_token %}
+            <p>Send an interest request to {{ to_user.username }}</p>
+            <button type="submit" class="btn btn-primary">Send Interest</button> <!-- Use Bootstrap button classes -->
+        </form>
+    </div>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br>
+
+</body>
+</html>
+{% endblock content %}
