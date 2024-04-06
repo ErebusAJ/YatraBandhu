@@ -2,11 +2,14 @@
 
 Yatra bandhu is a WebApp which helps users to plan thier own customized trips with the help of AI. It let's user connect to other travelers on the basis of their choices. Our main aim is to plan best trips for users and also help them find their own travelling buddies.
 
+![Landing](./asset/Home.png)
+
 ## Features
 * AI enabled trip planner
 * Customizable trips
 * User database
 * Finding travelling buddies of similar interests
+![Features](./asset/feature.png)
 
 ## Pre Requesites
 This project has to be run locally as of now. The required dependencies to run the project our as follows:
@@ -54,7 +57,8 @@ Now that all the dependencies are installed. To startup our project follow the b
 
 ## Acknowledgements
 
-This project is made by team HyperText Assassins including members:
+This project is made by team **HyperText Assassins** in WittyHacks hackathon.
+
 
 - **Aryan Sharma (Frontend Developer) :** Created a eye catching and user interface.
 - **Aarya Jamwal (Backend Developer) :** Created the backbone of the website for seamless backend operations.

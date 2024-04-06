@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm, TravelPlanForm
 from django.contrib.auth.decorators import login_required
 
 def register(request):
@@ -15,15 +15,11 @@ def register(request):
         form = UserRegisterForm()
     return render(request, 'users/register.html', {'form': form})
 
-def landing(request):
-    return render(request, 'users/landing.html')
-
-def home(request):
-    return render(request, 'users/home.html')
 
 @login_required
 def profile(request):
     return render(request, 'users/profile.html')
+
 
 @login_required()
 def update_profile(request):
@@ -44,3 +40,23 @@ def update_profile(request):
         'p_form' : p_form,
     }
     return render(request, 'users/update.html', context)
+
+
+def landing(request):
+    return render(request, 'users/landing.html')
+
+
+def home(request):
+    if request.method == 'POST':
+        form = TravelPlanForm(request.POST)
+        if form.is_valid():
+            travel_plan = form.save(commit=False)
+            travel_plan.user = request.user  
+            travel_plan.save()  
+    else:
+        form = TravelPlanForm()
+    return render(request, 'users/home.html', {'form': form})
+
+
+def contact(request):
+    return render(request, 'users/contact.html')

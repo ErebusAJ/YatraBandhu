@@ -126,8 +126,8 @@
 
     <nav>
         <div class="container">
-            <div class="logo">
-                <a href="#"><img src="logo.png" alt="यात्रा"></a>
+            <div class="logo",>
+                <a href="{% url 'landing' %}"><img src="{% static 'users/logo.png' %}" alt="यात्रा" style="width:auto; border-radius: 150rem; margin-left: 2px; margin-top: -2px ;"></a>
             </div>
             <ul class="menu">
                 {% if user.is_authenticated %}
@@ -153,6 +153,9 @@
     {% block content %} {% endblock %}
     <footer>
         <div class="container">
-            <p>&copy; 2024 yatra. All rights reserved.</p>
+            <p>
+                &copy; 2024 yatra. All rights reserved.
+                <br><a href="{% url 'contact' %}">Contact</a>
+            </p>
         </div>
     </footer>
