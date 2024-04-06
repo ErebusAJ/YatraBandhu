@@ -53,6 +53,7 @@ def home(request):
             travel_plan = form.save(commit=False)
             travel_plan.user = request.user  
             travel_plan.save()  
+            messages.success(request, f'Travel plan created successfully')
     else:
         form = TravelPlanForm()
     return render(request, 'users/home.html', {'form': form})

@@ -129,6 +129,13 @@
             <div class="logo",>
                 <a href="{% url 'landing' %}"><img src="{% static 'users/logo.png' %}" alt="यात्रा" style="width:auto; border-radius: 150rem; margin-left: 2px; margin-top: -2px ;"></a>
             </div>
+            {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+                </div>
+            {% endfor %}
+            {% endif %}
             <ul class="menu">
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'home' %}">Home</a></li>

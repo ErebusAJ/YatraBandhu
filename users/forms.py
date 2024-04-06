@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import Profile, TravelPlan
+from .models import Profile, TravelPlan, Category
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
@@ -40,19 +40,30 @@ class TravelPlanForm(forms.ModelForm):
     ]
 
     Prices = [
-        ('0-5k', '0-5k'),
-        ('5-10k', '5-10k'),
-        ('10-20k', '10-20k'),
-        ('20k & above', '20k & above'),
+        ('0-5k', 5000.00),
+        ('5-10k', 10000.00),
+        ('10-20k', 20000.00),
+        ('20k & above', 30000.00),
+    ]
+
+    Location = [
+        ('Gujrat', 'Gujrat'),
+        ('West Bengal','West Bengal'),
+        ('Jammu','Jammu'),
+        ('Karnatka','Karnatka'),
     ]
 
     categories = forms.MultipleChoiceField(choices=CATEGORIES_CHOICES, widget=forms.CheckboxSelectMultiple)
     price = forms.ChoiceField(choices=Prices)
-
+    location = forms.ChoiceField(choices=Location)
     class Meta:
         model = TravelPlan
-        fields = ['user', 'location', 'price', 'date_from', 'date_to', 'additional_info', 'categories']
+        fields = ['location', 'price', 'date_from', 'date_to', 'additional_info', 'categories']
         widgets = {
             'date_from': forms.DateInput(attrs={'type': 'date'}),
             'date_to': forms.DateInput(attrs={'type': 'date'}),
         }
+
+        def __init__(self, *args, **kwargs):
+            super(TravelPlanForm, self).__init__(*args, **kwargs)
+            self.fields['categories'].queryset = Category.objects.all()

@@ -6,28 +6,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yatra</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}"">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
     <style>
         .all {
-            background-image: url("{% static 'users/WhatsApp Image 2024-04-06 at 11.29.51 AM.jpeg' %}");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+        background-image: url("{% static 'users/Untitled design(2).png' %}");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0%;
+        margin-bottom: 0%;;
+    }
+
+    .transparent-box {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 1500px; /* Adjust the max-width value as needed */
+        width: 100%;
+    }
     </style>
-
-
 </head>
 
 <body>
-    <h2>Create your travel plan</h2>
-    <form  method="post" action="#">
-        {% csrf_token %}
-        {{ form | crispy }}
-        <label for="id_time"></label>
-        <br>
-        <button type="submit">Create Travel Plan</button>
-    </form>
+    <div class="all">
+        <div class="transparent-box">
+            <h2 class="mb-4">Create your travel plan</h2>
+            <form method="post" action="#">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <div class="form-group mt-4">
+                    <button type="submit" class="btn btn-primary">Create Travel Plan</button>
+                </div>
+            </form>
+        </div>
+    </div>
 {% endblock content %}

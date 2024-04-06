@@ -1,6 +1,20 @@
 {% extends 'users/base.html'%}
 {% load static %}
 {% block content %}
+<style>
+    .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            color: #ffffff;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: rgba(250, 143, 53, 0.8);
+            border-radius: 30px;
+            z-index: 9999;
+        }
+</style>
     <div class="slider-container">
         <div class="slider-container">
             <div class="video-wrapper">
@@ -45,8 +59,8 @@
     <div class="mapping">
         <img src="{% static 'users/landing/mapping.png' %}">
     </div>
-    <div class="logo">
-        <img src="{% static 'users/landing/india.png' %}">
+    <div style="margin-left: 41%;">
+        <img style="border-radius: 50%; height: 300px;" src="{% static 'users/logo.png' %}">
     </div>
     <div class="slider" x-data="{start: true, end: false}" style="padding-top: 150px;">
         <div class="slider__content" x-ref="slider"
@@ -414,22 +428,30 @@
         </div>
         <div class="form-card1">
             <div class="form-card2">
-                <form class="form">
+                <form name="submit-to-google-sheet" method="POST" class="form"
+                    action="https://script.google.com/macros/s/AKfycby9_o5xRJBd7qah4rx_u_yIkHrflqwzx-eR-ku0snROsZdftCITIdzvMNUEJ8rQxEEE/exec"
+                >
                     <p class="form-heading">CONTACT US</p>
 
                     <div class="form-field">
-                        <input required="" placeholder="Name" class="input-field" type="text" />
+                        <input required="" placeholder="Name" class="input-field" type="text" name="Name" data-name="Name"
+                        type="text" id="name" fdprocessedid="2ttyy4" />
                     </div>
 
                     <div class="form-field">
-                        <input required="" placeholder="Email" class="input-field" type="email" />
+                        <input required="" placeholder="Email" class="input-field" type="email" maxlength="256" name="Email" data-name="Email 2"
+                        type="email" id="email-2" required="" />
                     </div>
 
                     <div class="form-field">
-                        <textarea required="" placeholder="Message" cols="30" rows="3" class="input-field"></textarea>
+                        <textarea required="" placeholder="Message" cols="30" rows="3" class="input-field" maxlength="256" name="Message" data-name="Message"
+                         type="text" id="Message"></textarea>
                     </div>
 
-                    <button class="sendMessage-btn">Send Message</button>
+                    <div class="sendMessage-btn" id="submitBtn">Send Message</div>
+                        <div id="submittedPopup" class="popup">
+                            <p>Submitted successfully!</p>
+                        </div>
                 </form>
             </div>
         </div>
@@ -438,4 +460,42 @@
     </div>
     <div class="gap"></div>
     </div>
+    <script>
+        // JavaScript
+        function showPopup() {
+            const popup = document.getElementById('submittedPopup');
+            popup.style.display = 'block';
+            popup.classList.add('show');
+            setTimeout(function () {
+                popup.classList.remove('show');
+                setTimeout(function () {
+                    popup.style.display = 'none';
+
+                    // Clear input fields after showing the popup
+                    const inputFields = document.querySelectorAll('.contact-form .input');
+                    inputFields.forEach(input => {
+                        input.value = ''; // Reset each input field value
+                    });
+
+                }, 500); // Adjust the duration as needed
+            }, 1500);
+
+            // Reset the form after showing the popup
+            document.forms['submit-to-google-sheet'].reset();
+        }
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycby9_o5xRJBd7qah4rx_u_yIkHrflqwzx-eR-ku0snROsZdftCITIdzvMNUEJ8rQxEEE/exec'
+        const form = document.forms['submit-to-google-sheet']
+
+        document.getElementById('submitBtn').addEventListener('click', function (e) {
+            e.preventDefault();
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    console.log('Success!', response)
+                    showPopup();
+                })
+                .catch(error => console.error('Error!', error.message))
+        });
+
+    </script>
 {% endblock content %}
