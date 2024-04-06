@@ -1,14 +1,72 @@
 {% load crispy_forms_tags %}
-<form method="POST">
-    {% csrf_token %}
-    <fieldset class="form-group">
-        <legend class="border-bottom mb-4">Join Today</legend>
-        {{ form|crispy }}
-    </fieldset>
-    <div class="form-group">
-        <button class="btn btn-outline-info" type="submit">Sign Up</button>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for register page */
+        body, html {
+            height: 100%;
+        }
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-left: 32%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+        }
+        .background-image1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-top: 15%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+        }
+        .transparent-box {
+            background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Image -->
+    <img src="{% static 'users/Screenshot from 2024-04-06 05-43-36.png'%}" alt="Background Image" class="background-image">
+    <img src="{% static 'users/vector.jpg' %}" alt="Background Image" class="background-image1">
+
+
+    <!-- Content -->
+    <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="transparent-box col-md-6">
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Join Today</legend>
+                    {{ form|crispy }}
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                </div>
+                <div class="border-top pt-2">
+                    <small class="text-muted">
+                        Already have an account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+                    </small>
+                </div>
+            </form>
+        </div>
     </div>
-    <div>
-        <a class="btn btn-outline-info" href="{% url 'login' %}">Login In</a>
-    </div>
-</form>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

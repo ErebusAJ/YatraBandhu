@@ -1,11 +1,89 @@
 {% load crispy_forms_tags %}
-<form method="POST">
-    {% csrf_token %}
-    <fieldset class="form-group">
-        <legend class="border-bottom mb-4">Logi In</legend>
-        {{ form|crispy }}
-    </fieldset>
-    <div class="form-group">
-        <button class="btn btn-outline-info" type="submit">Login In</button>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'users/landing/styles.css' %}">
+    <style>
+        /* Custom CSS for login page */
+        
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-top: -3%;
+            margin-left: 25%;
+            width: 50%;
+            height: 50%;
+            z-index: -1;
+        }
+        .background-image1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-top: 14%;
+            margin-left: 15%;
+            width: 70%;
+            height: 70%;
+            z-index: -1;
+        }
+        .transparent-box {
+            background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="#"><img src="logo.png" alt="यात्रा"></a>
+            </div>
+            <ul class="menu">
+                <li><a href="{% url 'landing' %}">Home</a></li>
+                <li><a href="#">Services</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Background Image -->
+    <img src="{% static '/users/IncredibleIndia.png'%}" alt="Background Image" class="background-image">
+    <img src="{% static '/users/360_F_247193259_upeTuQAuV0wpjeuOJ8WItMHAQET2aJhL.jpg'%}" alt="Background Image1" class="background-image1">
+
+    <!-- Content -->
+    <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="transparent-box col-md-6">
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Login</legend>
+                    {{ form|crispy }}
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit">Login</button>
+                </div>
+            </form>
+            <div class="border-top pt-2">
+                <small class="text-muted">
+                    Need an account? <a class="ml-2" href="{% url 'register' %}">Register</a>
+                </small>
+            </div>
+        </div>
     </div>
-</form>
+    <br>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 yatra. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

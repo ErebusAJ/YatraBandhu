@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yatra</title>
+    <link rel="stylesheet" href="{% static 'users/landing/styles.css' %}">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js"></script>
+    <script src="https://kit.fontawesome.com/47a3b76bcf.js" crossorigin="anonymous"></script>
+
+    <style>
+     .back-content1 {
+        position: absolute;
+        width: 99%;
+        height: 99%;
+        margin-top: -7px;
+        background-image: url("{% static 'users/landing/img8.jpg' %}");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 5px;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        font-size: 35px;
+        text-align: center;
+        color: #fff;
+    }
+    
+    .back-content2 {
+        position: absolute;
+        width: 99%;
+        height: 99%;
+        margin-top: -7px;
+        background-image: url("{% static 'users/landing/img9.jpg' %}");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 5px;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        font-size: 35px;
+        text-align: center;
+        color: #fff;
+    }
+    
+    .back-content3 {
+        position: absolute;
+        width: 99%;
+        height: 99%;
+        margin-top: -7px;
+        background-image: url("{% static 'users/landing/img10.jpg' %}");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 5px;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        font-size: 35px;
+        text-align: center;
+        color: #fff;
+    }
+    
+    .back-content4 {
+        position: absolute;
+        width: 99%;
+        height: 99%;
+        margin-top: -7px;
+        background-image: url("{% static 'users/landing/img11.jpg' %}");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 5px;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        font-size: 35px;
+        text-align: center;
+        color: #fff;
+    }
+    
+    .back-content5 {
+        position: absolute;
+        width: 99%;
+        height: 99%;
+        margin-top: -7px;
+        background-image: url("{% static 'users/landing/img12.jpg' %}");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 5px;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        font-size: 35px;
+        text-align: center;
+        color: #fff;
+    }
+    </style>
+
+</head>
+
+<body>
+
+
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="#"><img src="logo.png" alt="यात्रा"></a>
+            </div>
+            <ul class="menu">
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'profile' %}">Profile</i></a></li>
+                {% else %}
+                <li><a href="{% url 'landing' %}">Home</a></li>
+                <li><a href="#">Services</a></li>
+                {% endif %}
+            </ul>
+            {% if user.is_authenticated %}
+                <form action="{% url 'logout' %}" method="post" class="logout">
+                    {% csrf_token %}
+                    <button type="submit" style="background-color: #ffebbb;">Logout</button>
+                </form>
+            {% else %}
+                <div class="profile">
+                    <a href="{% url 'register' %}">Register</a>
+                </div>
+            {% endif %}
+        </div>
+    </nav>
+    {% block content %} {% endblock %}
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 yatra. All rights reserved.</p>
+        </div>
+    </footer>

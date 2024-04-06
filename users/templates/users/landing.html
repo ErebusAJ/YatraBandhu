@@ -1,13 +1,441 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Landing Page</h1>
-    <a href="{% url 'login' %}">Login In</a>
-    <a href="{% url 'register' %}">Register Here</a>
-</body>
-</html>
+{% extends 'users/base.html'%}
+{% load static %}
+{% block content %}
+    <div class="slider-container">
+        <div class="slider-container">
+            <div class="video-wrapper">
+                <video class="video-background" preload="auto" loop autoplay muted>
+                    <source src="{% static 'users/landing/landing_cont1.mp4' %}" type="video/mp4">
+
+                </video>
+                <div class="text-overlay">
+                    <h2>अविश्‍वसनीय भारत</h2>
+                    <p>
+
+                    <div class="btn-container">
+                        <a href="#" class="btn-content">
+                            <span class="icon-arrow">
+                                <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                                    version="1.1" viewBox="0 0 66 43" height="30px" width="30px">
+                                    <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none" id="arrow">
+                                        <path fill="#9ee5fa"
+                                            d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z"
+                                            id="arrow-icon-one"></path>
+                                        <path fill="#9ee5fa"
+                                            d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z"
+                                            id="arrow-icon-two"></path>
+                                        <path fill="#9ee5fa"
+                                            d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z"
+                                            id="arrow-icon-three"></path>
+                                    </g>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="logo">
+        <img src="{% static 'users/landing/india.png' %}">
+    </div>
+    <div class="mapping">
+        <img src="{% static 'users/landing/mapping.png' %}">
+    </div>
+    <div class="logo">
+        <img src="{% static 'users/landing/india.png' %}">
+    </div>
+    <div class="slider" x-data="{start: true, end: false}" style="padding-top: 150px;">
+        <div class="slider__content" x-ref="slider"
+            x-on:scroll.debounce="$refs.slider.scrollLeft == 0 ? start = true : start = false; Math.abs(($refs.slider.scrollWidth - $refs.slider.offsetWidth) - $refs.slider.scrollLeft) < 5 ? end = true : end = false;">
+            <div class="slider__item">
+
+                <div class="card">
+                    <div class="content">
+                        <div class="back">
+                            <div class="back-content1">
+
+                                <strong>Statue Of Unity</strong>
+                            </div>
+                        </div>
+                        <div class="front">
+
+                            <div class="img">
+                                <div class="circle">
+                                </div>
+                                <div class="circle" id="right">
+                                </div>
+                                <div class="circle" id="bottom">
+                                </div>
+                            </div>
+
+                            <div class="front-content">
+                                <div class="description">
+                                    <div class="title">
+                                        <p class="title">
+                                            <strong>It’s huge, almost gigantic! That is the first reaction most people
+                                                have as they speed down the winding road leading to
+                                                the towering Statue of Unity (SoU). A long bridge connects the mainland
+                                                to the Sadhu Bet Island, on which the statue
+                                                stands. Silhouetted against the surrounding Vindhya and Satpura mountain
+                                                ranges, the colossal statue almost seems to
+                                                pierce the skyline.
+                                                The legacy of Sardar Vallabhbhai Patel, India’s Iron Man, lives on in
+                                                the form of this massive statue dominating the
+                                                Narmada river basin.
+
+                                                He towers over the landscape, as if, keeping an eye over the land he
+                                                helped become independent. Standing at a height of
+                                                182 m, the Statue of Unity, is the tallest in the world. It depicts
+                                                Sardar Patel in a walking pose, clad in his
+                                                characteristic simple attire. About 100 times the height of a
+                                                five-and-a-half-ft-tall person, one can see the statue
+                                                from as far away as 8 km. The SoU was inaugurated on October 31, 2018,
+                                                by Prime Minister Narendra Modi to commemorate
+                                                Patel’s 143rd birth anniversary.
+
+                                                The statue has been built on a star-shaped geometric base that covers
+                                                the entire Sadhu Hill. It has a viewing gallery at
+                                                135 m, at the statue’s chest level, that can be reached via two
+                                                high-speed elevators. The gateway to the elevators is
+                                                through an exhibition gallery, in which you can marvel at a model of the
+                                                statue and an elaborate blueprint, among other
+                                                exhibits.</strong>
+                                        </p>
+
+                                    </div>
+                                    <p class="card-footer">
+                                        <a href="https://en.wikipedia.org/wiki/Statue_of_Unity">Read more</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider__item">
+                <div class="card">
+                    <div class="content">
+                        <div class="back">
+                            <div class="back-content2">
+
+                                <strong>Taj Mahal</strong>
+                            </div>
+                        </div>
+                        <div class="front">
+
+                            <div class="img">
+                                <div class="circle">
+                                </div>
+                                <div class="circle" id="right">
+                                </div>
+                                <div class="circle" id="bottom">
+                                </div>
+                            </div>
+
+                            <div class="front-content">
+
+                                <div class="description">
+                                    <div class="title">
+                                        <p class="title">
+                                            <strong>The Taj Mahal is located on the right bank of the Yamuna River in a
+                                                vast Mughal garden that encompasses nearly 17
+                                                hectares, in the Agra District in Uttar Pradesh. It was built by Mughal
+                                                Emperor Shah Jahan in memory of his wife Mumtaz
+                                                Mahal with construction starting in 1632 AD and completed in 1648 AD,
+                                                with the mosque, the guest house and the main
+                                                gateway on the south, the outer courtyard and its cloisters were added
+                                                subsequently and completed in 1653 AD. The
+                                                existence of several historical and Quaranic inscriptions in Arabic
+                                                script have facilitated setting the chronology of
+                                                Taj Mahal. For its construction, masons, stone-cutters, inlayers,
+                                                carvers, painters, calligraphers, dome builders and
+                                                other artisans were requisitioned from the whole of the empire and also
+                                                from the Central Asia and Iran. Ustad-Ahmad
+                                                Lahori was the main architect of the Taj Mahal.
+
+                                                The Taj Mahal is considered to be the greatest architectural achievement
+                                                in the whole range of Indo-Islamic
+                                                architecture. Its recognised architectonic beauty has a rhythmic
+                                                combination of solids and voids, concave and convex and
+                                                light shadow; such as arches and domes further increases the aesthetic
+                                                aspect. The relief work in
+                                                marble and inlay with precious and semi precious stones make it a
+                                                monument apart.</strong>
+                                        </p>
+
+                                    </div>
+                                    <p class="card-footer">
+                                        <a href="https://en.wikipedia.org/wiki/Taj_Mahal">Read more</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider__item">
+
+                <div class="card">
+                    <div class="content">
+                        <div class="back">
+                            <div class="back-content3">
+
+                                <strong>Amber Fort</strong>
+                            </div>
+                        </div>
+                        <div class="front">
+
+                            <div class="img">
+                                <div class="circle">
+                                </div>
+                                <div class="circle" id="right">
+                                </div>
+                                <div class="circle" id="bottom">
+                                </div>
+                            </div>
+
+                            <div class="front-content">
+
+                                <div class="description">
+                                    <div class="title">
+                                        <p class="title">
+                                            <strong>Just 11 km outside Jaipur, lies the magnificent Amber Fort (Amer
+                                                Fort), sitting atop a hill, and rising like a sentinel
+                                                guarding the city. Commissioned in 1592 by Maharaja Man Singh I, the
+                                                fort is a fine blend of Rajput and Mughal
+                                                architectural styles, and boasts a grand palace, temples and several
+                                                ornate gates. Built entirely of red sandstone with
+                                                white marble work, the UNESCO World Heritage Site is a picture of
+                                                opulence and grandeur, set against a stark desert
+                                                backdrop and rolling hills.
+
+
+
+                                                One can either walk up the wide winding uphill road to reach the main
+                                                gate of the fort or hire a cab. As you get closer
+                                                to the massive gate, you realise why it was considered almost
+                                                impregnable by the enemy, when the royal family used to
+                                                reside here, before they shifted the capital to Jaipur. As you enter,
+                                                you cross the Suraj Pol (sun gate), which leads to
+                                                the main courtyard called Jaleb Chowk. Diagonally opposite is the Chand
+                                                Pol (moon gate). From Jaleb Chowk, a flight of
+                                                stairs leads up to the small Siladevi Temple, whose doors feature relief
+                                                work in silver.The main palace is up next. It includes the Diwan-e-Am
+                                                (hall for a private audience with the king) with carved columns
+                                                and latticed galleries, the king’s apartments, the gate Ganesh Pol with
+                                                beautiful arches, and Jai Mandir or Sheesh
+                                                Mahal.</strong>
+                                        </p>
+
+                                    </div>
+                                    <p class="card-footer">
+                                        <a href="https://en.wikipedia.org/wiki/Amber_Fort">Read more</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider__item">
+
+                <div class="card">
+                    <div class="content">
+                        <div class="back">
+                            <div class="back-content4">
+
+                                <strong>Hampi</strong>
+                            </div>
+                        </div>
+                        <div class="front">
+
+                            <div class="img">
+                                <div class="circle">
+                                </div>
+                                <div class="circle" id="right">
+                                </div>
+                                <div class="circle" id="bottom">
+                                </div>
+                            </div>
+
+                            <div class="front-content">
+
+                                <div class="description">
+                                    <div class="title">
+                                        <p class="title">
+                                            <strong>A legendary lost city that was once the powerhouse of an ancient
+                                                kingdom and an auspicious temple town standing on the
+                                                banks of the mighty Tungabhadra river, history and mythology come to
+                                                life in Hampi, Karnataka. A queen's bath, a
+                                                spectacular Lotus Palace, a royal stable or a temple, which is said to
+                                                have been the place where the wedding of Lord
+                                                Shiva and Goddess Parvati took place, this UNESCO World Heritage site
+                                                reveals a facet of history at every turn.
+
+                                                Albeit in ruins, the magnificent structures here stand in testimony to
+                                                Hampi's rich past under the powerful Vijayanagara
+                                                empire (1336 – 1646 AD). Hampi finds mention in the Hindu epic Ramayana
+                                                as well. It is said to be the location of the
+                                                monkey kingdom, Kishkindha. No wonder then that Hampi has ranked second
+                                                in the must-visit destination list for the year
+                                                2019 by the New York Times! The grandiose site of Hampi was the last
+                                                capital of the Vijayanagara kingdom, one of the
+                                                most significant in southern India. Its rich kings built exquisite
+                                                temples and palaces, which won the admiration of
+                                                travellers between the 14th and 16th centuries. Though plundered later,
+                                                Hampi still retains more than 1,600 monuments,
+                                                including palaces, forts, memorial structures, temples, shrines,
+                                                pillared halls, baths and gateways.</strong>
+                                        </p>
+
+                                    </div>
+                                    <p class="card-footer">
+                                        <a href="https://en.wikipedia.org/wiki/Hampi">Read More</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider__item">
+                <div class="card">
+                    <div class="content">
+                        <div class="back">
+                            <div class="back-content5">
+
+                                <strong>Lord Venkateshwara Temple</strong>
+                            </div>
+                        </div>
+                        <div class="front">
+
+                            <div class="img">
+                                <div class="circle">
+                                </div>
+                                <div class="circle" id="right">
+                                </div>
+                                <div class="circle" id="bottom">
+                                </div>
+                            </div>
+
+                            <div class="front-content">
+
+                                <div class="description">
+                                    <div class="title">
+                                        <p class="title">
+                                            <strong>Situated in the Chittoor district of Andhra Pradesh, Tirupati is
+                                                known for Lord Venkateshwara Temple, one of the most
+                                                visited pilgrimage centers in the world. It is also one of the world's
+                                                richest temples known by different names -
+                                                Tirumala Temple, Tirupati Temple, and Tirupati Balaji Temple. Tirumala
+                                                is one of the seven hills in Tirupati, where the
+                                                main temple is located. The temple is believed to be where Lord
+                                                Venkateshwara took the form of an idol and is home to
+                                                the deity Govinda. Tirupati is one of India's oldest cities and is
+                                                mentioned in many ancient Vedas and Puranas.
+
+                                                Tirupati is the main town, while Tirumala Hills is where Tirupati Balaji
+                                                Temple is situated. Also called Sri
+                                                Venkateshvara Swami Vaari Temple, it is dedicated to Lord Venkateswara,
+                                                believed to be a form of Lord Vishnu, who
+                                                appeared on earth to save mankind from kali yuga. The famous Tirupati
+                                                Laddoo, given as a prasad at the temple, has the
+                                                Geographical indication tag, which means it can only be made and sold at
+                                                the temple. It is hugely loved by the pilgrims
+                                                and is generally included in the paid darshan tickets or can be bought
+                                                from the laddoo counters inside the temple
+                                                complex.</strong>
+                                        </p>
+
+                                    </div>
+                                    <p class="card-footer">
+                                        <a href="https://en.wikipedia.org/wiki/Venkateswara_Temple,_Tirumala">Read
+                                            more</a>"
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="container3">
+        <div class="block">
+            <div class="about"></div>
+
+            <h2>ABOUT US</h2>
+            <p>Yatra is more than just a travel company; it's a gateway to a world of personalized exploration and
+                connection. We
+                understand that every traveler is unique, with their own dreams, desires, and interests. That's why our
+                mission is to
+                empower you to embark on journeys that resonate with your individuality, offering tailor-made
+                experiences that celebrate
+                the rich tapestry of culture, heritage, and natural beauty that India has to offer.
+
+                Imagine wandering through the bustling streets of Old Delhi, savoring the aroma of spices wafting
+                through the air, or
+                trekking through the majestic landscapes of the Himalayas, where snow-capped peaks reach for the sky.
+                Whether you're
+                drawn to the tranquil backwaters of Kerala, the ancient temples of Varanasi, or the vibrant markets of
+                Jaipur, Yatra is
+                your companion in discovering the incredible wonders of India.
+
+                But we go beyond simply crafting itineraries; we're here to connect you with like-minded travelers who
+                share your
+                passions and vibes. For solo adventurers seeking companionship along the way, our platform provides a
+                space to find
+                travel buddies who will enhance your journey and create unforgettable memories together. Whether you're
+                a foodie on a
+                quest for the perfect curry, a nature enthusiast eager to explore the wilderness, or a cultural explorer
+                keen to immerse
+                yourself in local traditions, our community is here to welcome you with open arms.
+
+                At Yatra, we believe that travel is not just about the destinations you visit, but the experiences you
+                encounter and the
+                connections you make along the way. That's why we're committed to providing unparalleled service, expert
+                guidance, and
+                genuine hospitality to every traveler who entrusts us with their journey. From the moment you book your
+                trip to the day
+                you return home, we're here to ensure that your experience with Yatra is nothing short of extraordinary.
+
+                So whether you're embarking on a solo adventure, a family vacation, or a group tour, let Yatra be your
+                guide to
+                experiencing the incredible wonders of India like never before. Join us as we embark on a journey of
+                exploration,
+                connection, and transformation, and let the magic of Yatra unfold before your eyes.</p>
+
+        </div>
+        <div class="form-card1">
+            <div class="form-card2">
+                <form class="form">
+                    <p class="form-heading">CONTACT US</p>
+
+                    <div class="form-field">
+                        <input required="" placeholder="Name" class="input-field" type="text" />
+                    </div>
+
+                    <div class="form-field">
+                        <input required="" placeholder="Email" class="input-field" type="email" />
+                    </div>
+
+                    <div class="form-field">
+                        <textarea required="" placeholder="Message" cols="30" rows="3" class="input-field"></textarea>
+                    </div>
+
+                    <button class="sendMessage-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="gap"></div>
+    </div>
+{% endblock content %}

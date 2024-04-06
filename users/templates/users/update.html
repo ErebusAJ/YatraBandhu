@@ -1,17 +1,49 @@
+{% extends 'users/base.html' %}
 {% load crispy_forms_tags %}
-<div class="content-section">
-    <div class="media">
-        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
-    </div>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Edit Profile</legend>
-                {{ u_form|crispy }}
-                {{ p_form|crispy }}
-            </fieldset>
-        <div class="form-group">
-            <button class="btn btn-outline-info" type="submit">Update</button>
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for profile page */
+        .account-img {
+            width: 150px;
+            height: 150px;
+        }
+        .content-section{
+            justify-content: center;
+            margin-left: 20%;
+        }
+    </style>
+</head>
+<body>
+    <br><br><br><br><br>
+    <div class="container mt-5">
+
+        <!-- Profile Edit Section -->
+        <div class="content-section">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Edit Profile</legend>
+                    {{ u_form|crispy }}
+                    {{ p_form|crispy }}
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit">Update</button>
+                </div>
+            </form>
         </div>
-    </form>
-</div>
+    </div>
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock content %}
