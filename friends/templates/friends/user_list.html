@@ -12,6 +12,7 @@
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .list_bg {
             background-image: url("{% static 'friends/bg.jpeg' %}");
@@ -41,7 +42,7 @@
             scroll-snap-type: x block;
             overflow: auto;
             border-radius: 10px;
-            margin-left: 26%;
+            margin-left: 32%;
             overflow-x: hidden;
             margin-top: 10%;
         }
@@ -93,11 +94,11 @@
         {% if travel.user != request.user %}
             <div class="slide A">
                 <h2>{{ travel.user }}</h2>
-                <p class="tip1">{{ travel.location }}</p>
-                <p class="tip1">{{ travel.date_from }}</p>
-                <p class="tip1">{{ travel.date_to }}</p>
-                <p class="tip1">{{ travel.additional_info }}</p>
-                <button>
+                <p class="tip1">Location : {{ travel.location }}</p>
+                <p class="tip1">Date From : {{ travel.date_from }}</p>
+                <p class="tip1">Date To : {{ travel.date_to }}</p>
+                <p class="tip1">Info : {{ travel.additional_info }}</p>
+                <button class="btn btn-light" style="margin-left: 42%; padding: 5px;">
                     <a href="{% url 'send-interest' travel.user.id %}">Send Request</a>
                 </button>
             </div>
@@ -106,4 +107,6 @@
     </div>
 <br><br><br><br><br><br><br><br>
 <br><br>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 {% endblock content %}
