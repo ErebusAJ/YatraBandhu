@@ -1,0 +1,745 @@
+{% extends 'users/base.html' %}
+{% load static %}
+{% block content %}
+!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yatra</title>
+    <link rel="stylesheet" href="{% static '' %}">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js"></script>
+
+    <style>
+        .red {
+            background: linear-gradient(180deg, #fff, #ffebbb);
+        }
+
+        .blue {
+            background: linear-gradient(180deg, #fff, #e0ffcd);
+        }
+
+        .green {
+            background: linear-gradient(180deg, #fff, #ffe9e3);
+        }
+
+        .purple {
+            background: linear-gradient(180deg, #fff, #ddeedf);
+        }
+        .teal{
+            background: linear-gradient(180deg, #fff, #f4eeff);
+
+
+        }
+
+        .scroll-snap-card {
+            height: 500px;
+            width: 100%;
+            scroll-snap-type: y mandatory;
+            scroll-snap-type: x block;
+            scroll-behavior: smooth;
+            overflow: auto;
+            border-radius: 10px;
+        }
+
+        .scroll-snap-card .slide {
+            width: 100%;
+            height: 100%;
+            scroll-snap-align: start;
+            display: block;
+            align-items: center;
+            justify-content: center;
+   
+            padding-top: 50px;
+            padding-bottom: 50px;
+            overflow-x: hidden;
+        }
+
+        .scroll-snap-card .slide p ,ul,li{
+            font-size: 1em;
+            color: rgb(0, 0, 0);
+            font-weight: 700;
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px;
+            line-height: 2;
+        }
+    
+    </style>
+
+</head>
+
+<body>
+
+    <div class="tower">
+        <div class="shine">Tailored Itinerary For Your Journey
+        </div>
+    </div>
+    <div class="flex-container77">
+        {% if location == 'Ahmedabad' %}
+        <div class="flex-item flex-item-75">
+            <div class="scroll-snap-card">
+                <div class="slide red">
+                    <p class="tip">
+                        <h2>SUMMARY</h2>
+                        <p>Your trip to Ahmedabad for 4 days
+                            Ahmedabad is a vibrant city in India that offers a rich blend of history, culture, and shopping. 
+                            Known for its historic architecture, you will find magnificent structures that showcase the city's glorious past. 
+                            Explore the must-see attractions which include iconic landmarks and captivating museums. 
+                            Immerse yourself in the local culture by visiting bustling markets and shopping for traditional handicrafts, textiles, and jewelry. 
+                            Ahmedabad's pleasant weather in April makes it a perfect time for outdoor exploration and enjoying the city's vibrant atmosphere.
+                        
+                        </p>
+                        
+                        <ul>Place to stay<li>
+                           Crowne Plaza Ahmedabad City Centre 
+                           ₹7,669 per night (080005 01395)
+                            SG Road Near Shapath - V, Ahmedabad 380015 India 
+                        </li> 
+                           <li> Courtyard Ahmedabad Sindhu Bhavan Road
+                                ₹7,728 per night (079 6700 0000)
+                            Courtyard Ahmedabad Sindhu Bhawan Road, Ahmedabad 380054 India
+                        </li></ul>
+                    
+                        
+                        </p>
+                </div>
+                <div class="slide blue">
+                    <p class="tip">
+                        <h2>DAY 1</h2>
+                        <p>
+                            Day 1
+                        Get ready for an exciting day exploring this vibrant city. To start off, head to the Calico Museum of Textiles, 
+                        a must-see attraction for anyone interested in the rich textile heritage of the region. Marvel at the intricate 
+                        fabric art and learn about the history of textile production in India. Next, visit Gandhi Ashram, the peaceful abode of Mahatma Gandhi during the freedom struggle. Experience the serenity and gain insights into his life and teachings. For lunch, indulge in delicious Gujarati cuisine at Havmor Restaurant, known for its authentic flavors. Afterward, make your way to the iconic Sidi Saiyyed Mosque, famous for its beautiful stone lattice work. End your day at
+                        Vishalla, an eatery that offers a unique dining experience with traditional Gujarati food and cultural performances. Enjoy your first day in Ahmedabad!
+                        </p>
+                        <ul>
+                        <li>Calico Museum of Textiles</li>
+                        <li>Gandhi Ashram</li>
+                        <li>Havmor Restaurant</li>
+                        <li>Sidi Saiyyed Mosque</li>
+                        <li>Vishalla</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="slide green">
+                    <h2>DAY 2</h2>
+                    <p class="tip">Today, you have a fantastic itinerary lined up in Ahmedabad! First, head to Kankaria Lake, a must-see attraction
+                        known for its beautiful surroundings and recreational activities. Take a leisurely stroll around the lake or enjoy 
+                        a boat ride to fully immerse yourself in its charm. Next, visit Bhagwat Vidyapith, another fascinating attraction 
+                        showcasing historic architecture and cultural significance. After exploring, satisfy your taste buds at Nini's Kitchen,
+                        a popular eatery offering delicious local cuisine. Once you're energized, make your way to Ahmedabad One Mall for some shopping.
+                        Browse through a wide range of stores and indulge in some retail therapy. Finally, end your day at The Great Kabab Factory,
+                        where you can savor mouthwatering kababs and other delectable dishes. Enjoy your second day in Ahmedabad!
+                    </p>
+                    <li>Kankaria Lake</li>
+                    <li>Bhagwat Vidyapith</li>
+                    <li>Nini's Kitchen</li>
+                    <li>Alpha One Mall</li>
+                    <li>The Great Kabab Factory</li>
+                    <p></p>
+                </div>
+                <div class="slide purple">
+                    <h2>DAY 3</h2>
+                    <p class="tip">For the third day of your trip to Ahmedabad, India, we have planned an exciting itinerary based on your interests.
+                        You will start your day by visiting the Auto World Vintage Car Museum, a must-see attraction for car enthusiasts like you. 
+                        Explore the collection of vintage cars and learn about their history. Afterward, head to Tinello, a popular eatery, 
+                        to enjoy a delicious lunch and sample some traditional Gujarati cuisine. In the afternoon, visit Amdavad ni Gufa, 
+                        a unique attraction known for its underground art gallery and unconventional architecture. Take your time to admire 
+                        the artworks and immerse yourself in the cultural experience. To end the day on a high note, head to Adalaj Pavilion, 
+                        another great eatery, where you can indulge in some local delicacies. Enjoy the ambiance and savor the flavors of Ahmedabad. 
+                        Have a fantastic day!
+                   </p>
+                   <li>Auto World Vintage Car Museum</li>
+                   <li>Tinello</li>
+                   <li>Amdavad ni Gufa</li>
+                   <li>Adalaj Pavilion</li></p>
+                </div>
+                <div class="slide teal">
+                    <h2>DAY 4</h2>
+                    <p class="tip">On the fourth day of your trip to Ahmedabad, India, get ready for a fantastic day filled with amazing attractions,
+                        delicious food, and vibrant culture! Start your day by visiting the enchanting Mata Boot Bhawani Temple, 
+                        a must-see attraction known for its beautiful architecture and serene atmosphere. After immersing yourself in spirituality, 
+                        head to Agashiye, a popular eatery where you can savor authentic Gujarati cuisine. Next, explore the magnificent Jami Masjid, 
+                        a historic mosque showcasing stunning Islamic architecture. Don't forget to visit Manek Chowk, a bustling market square famous 
+                        for its vibrant atmosphere and local delicacies. Finally, end your day on a delicious note by indulging in mouthwatering snacks
+                         at Swati Snacks. Enjoy the rich flavors and unique culinary experiences that Ahmedabad has to offer!
+                   </p>
+                   <li>Mata Boot Bhawani Temple</li>
+                   <li>Agashiye</li>
+                   <li>Jami Masjid</li>
+                   <li>Manek Chowk</li>
+                   <li>Swati Snacks</li></p>
+                </div>
+            </div>
+        </div>
+        <div class="flex-item flex-item-25"></div>
+        {% endif %}
+
+
+
+        {% if location == 'Vadodara' %}
+        <div class="flex-item flex-item-75">
+            <div class="scroll-snap-card">
+                <div class="slide red">
+                    <p class="tip">
+                        <h2>SUMMARY</h2>
+                        <p>Your trip to Vadodara for 2 days
+                            Vadodara is a captivating destination in India that offers a delightful blend of must-see attractions,
+                            great food, historical landmarks, and rich culture. With its pleasant weather in April, you can explore
+                            he city's iconic sights and immerse yourself in its vibrant atmosphere. Discover awe-inspiring historical 
+                            landmarks that showcase the city's rich heritage, indulge in delicious local cuisine that will tantalize 
+                            your taste buds, and explore the cultural offerings through art galleries, museums, and traditional performances.
+                        </p>
+                        <ul>
+                            <li>Place to stay
+                                1> 7 Apple Hotel Vadodara ₹1,917 
+                                Old Channi Road Near Pandya Bridge, Next to D'Mart, Vadodara 390002 India
+                            </li> 
+                               <li> 2> Welcomhotel by ITC Hotels, Alkapuri, Vadodara  ₹6,159  (1800 102 2333)
+                                R.C. Dutt Road Alkapuri, Vadodara 390007 India 
+                            </li>
+                        </ul>
+                        
+                        </p>
+                </div>
+                <div class="slide blue">
+                    <p class="tip">
+                        <h2>DAY 1</h2>
+                        <p>
+                            Welcome to Vadodara, India! Get ready for an exciting day filled with must-see attractions, 
+                            great food, historical landmarks, and cultural experiences. To start your day, visit the Baroda Museum and Picture Gallery, 
+                            where you can explore a vast collection of art and historical artifacts. Afterward, satisfy your taste buds at the Fiorella 
+                            Italian Restaurant, known for its delicious cuisine. Next, head to Kirti Mandir, a historical landmark dedicated to the Gaekwad dynasty. 
+                            For lunch, indulge in traditional Gujarati cuisine at Kalyan Hotel. Finally, immerse yourself in the rich history of 
+                            Vadodara at the Maharaja Fatesingh Museum. Enjoy your first day in Vadodara, and get ready for more exciting adventures tomorrow!
+                        </p>
+                        <li>Baroda Museum and Picture Gallery</li>
+                        <li>Fiorella Italian Restaurant</li>
+                        <li>Kirti Mandir</li>
+                        <li>Kalyan Hotel</li>
+                        <li>Maharaja Fatesingh Museum</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="slide green">
+                    <h2>DAY 2</h2>
+                    <p class="tip">On the second day of your trip to Vadodara, India, you have a great itinerary lined up. 
+                        First, you will visit the magnificent Lukshmi Vilas Palace, a must-see attraction. 
+                        Immerse yourself in the grandeur and history of this stunning palace. Next, head to the Maharaja Sayajirao University of Baroda, 
+                        another fascinating attraction that showcases the rich cultural heritage of the city. After exploring these attractions, 
+                        treat yourself to a delicious meal at Barbeque Nation, known for its great food and variety of grilled delicacies. 
+                        In the afternoon, visit Inorbit Mall Vadodara for some shopping and entertainment. Finally, end your day with a visit 
+                        to Gusto's Pizzeria, where you can savor mouthwatering pizzas. Enjoy your second day in Vadodara!
+                    </p>
+                    <li>Lukshmi Vilas Palace</li>
+                    <li>Maharaja Sayajirao University of Baroda</li>
+                    <li>Barbeque Nation</li>
+                    <li>Inorbit Mall Vadodara</li>
+                    <li>Gusto's Pizzeria</li>
+                    <p></p>
+                </div>
+        <div class="flex-item flex-item-25"></div>
+        {% endif %}
+
+
+
+        {% if location == 'Jamnagar' %}
+        <div class="flex-item flex-item-75">
+            <div class="scroll-snap-card">
+                <div class="slide red">
+                    <p class="tip">
+                        <h2>SUMMARY</h2>
+                        <p>Jamnagar, located in India, is a captivating destination for solo travelers. With a rich history and vibrant culture, 
+                            it offers a variety of must-see attractions, historical landmarks, and delicious food. In April, you can expect pleasant 
+                            weather, perfect for exploring the city's hidden gems. Immerse yourself in the local culture by visiting traditional 
+                            markets or witnessing cultural performances.                
+                        </p>
+                        <ul>
+                            <li>Place to stay
+                                1> Hotel Aram ₹3,500 (093777 09978)
+                                Pandit Nehru Marg Nand Niwas, Jamnagar 361008 India
+                            </li> 
+                               <li> 2> Hotel Nova K D Comfort ₹4,000 (9335689556)
+                                3rd Floor Opp Dkv College, Jamnagar 361008 India 
+                            </li>
+                        </ul>
+                        </p>
+                </div>
+                <div class="slide blue">
+                    <p class="tip">
+                        <h2>DAY 1</h2>
+                        <p>
+                            Welcome to Jamnagar, India! Get ready for an exciting first day of your trip. Based on your interests in 
+                            Must-see Attractions, Historical Landmarks, Culture, and Great Food, here is your itinerary for the 
+                            day: 1. Start your day with a delicious meal at 7 Seas Restaurant, known for its great food. 
+                            2. Explore the historical Lakhota Fort, a must-see attraction in Jamnagar. 3. Enjoy a delightful 
+                            lunch at The Grand Chetna, where you can experience the local culture and cuisine. 4. Visit the Khijada Temple, 
+                            a beautiful historical landmark. 5. End your day by witnessing the breathtaking Ranjitsagar Dam. 
+                            Have a fantastic time exploring these amazing locations on your first day in Jamnagar!
+                        </p>
+                        <li>7 Seas Restaurant</li>
+                        <li>Lakhota Fort</li>
+                        <li>The Grand Chetna</li>
+                        <li>Khijada Temple</li>
+                        <li>Ranjitsagar Dam</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="slide green">
+                    <h2>DAY 2</h2>
+                    <p class="tip">For the second day of your trip to Jamnagar, India, we have some exciting recommendations based on your preferences. 
+                        Start your day by visiting the Bala Hanuman Temple, a must-see attraction known for its spiritual atmosphere and mesmerizing chants. 
+                        Afterward, head to the Adinath Mandir Jain Temple, a historical landmark with stunning architecture and serene surroundings. 
+                        Continue your cultural exploration by visiting the Lakhota Museum, which houses a remarkable collection of artifacts and exhibits. 
+                        For a taste of local cuisine, make sure to stop by the Mota Ashapura Maa Temple, where you can savor delicious traditional food. 
+                        Lastly, end your day at Hotel Aram Restaurant, known for its great food and cozy ambiance. Enjoy your second day in Jamnagar!
+                    </p>
+                    <li>Bala Hanuman Temple</li>
+                    <li>Adinath Mandir Jain Temple</li>
+                    <li>Lakhota Museum</li>
+                    <li>Mota Ashapura Maa Temple</li>
+                    <li>Hotel Aram Restaurant</li>
+                    <p></p>
+                </div>
+                <div class="slide purple">
+                    <h2>DAY 3</h2>
+                    <p class="tip">For your third day in Jamnagar, India, we have planned an exciting itinerary based on your preferences. 
+                        Start your day by visiting Lakhota Palace, a must-see attraction with its stunning architecture and historical significance. 
+                        After exploring the palace, head to Sankalp Restaurant for a delicious lunch that offers a taste of the local cuisine. 
+                        Next, make your way to Ranmal Lake, a beautiful attraction where you can enjoy a peaceful stroll or simply relax by the water. 
+                        In the evening, visit Lakhota Talav, another attraction known for its serene ambiance and picturesque views. 
+                        End your day on a high note by dining at Kalpna Restaurant, where you can savor more delicious local dishes. 
+                        Enjoy your day filled with culture, history, and great food!
+                    </p>
+                    <li>Lakhota Palace</li>
+                    <li>Sankalp Restaurant</li>
+                    <li>Ranmal Lake</li>
+                    <li>Lakhota Talav</li>
+                    <li>Kalpna Restaurant</li>
+                </div>
+        <div class="flex-item flex-item-25"></div>
+        {% endif %}
+
+
+
+        {% if location == 'Bengaluru' %}
+        <div class="flex-item flex-item-75">
+            <div class="scroll-snap-card">
+                <div class="slide red">
+                    <p class="tip">
+                        <h2>SUMMARY</h2>
+                        <p>Bengaluru, known as the Silicon Valley of India, is a vibrant city with a perfect blend of modernity and tradition.
+                            With its pleasant weather in April, it's an ideal destination for your 3-day solo trip. Bengaluru boasts a rich history, 
+                            offering a glimpse into the past through its magnificent palaces and ancient temples. You'll be spoilt for choice when it 
+                            comes to must-see attractions, from stunning gardens to bustling markets.
+                       </p>
+                       <ul>
+                           <li>Place to stay
+                               1> Ramada Encore by Wyndham Bangalore Domlur  ₹6,550 (9918991820)
+                               282 To 285, Bengaluru 560071 India
+                           </li> 
+                              <li> 2> The Oterra ₹20,989 (1234567890)
+                               43 Electronics City, Hosur Road Hosur Road, Bengaluru 560100 India
+                           </li>
+                       </ul>
+                    
+                        
+                        </p>
+                </div>
+                <div class="slide blue">
+                    <p class="tip">
+                        <h2>DAY 1</h2>
+                        <p>
+                            Welcome to Bengaluru, India! Get ready for an exciting first day of your trip. In the morning, 
+                            start by visiting the beautiful Lalbagh Botanical Garden, a must-see attraction known for its stunning flora. 
+                            Immerse yourself in the serene surroundings and take memorable pictures. Next, explore the history of Tipu Sultan
+                             at 'The story of Tipu Sultan' activity, where you can learn about his life and legacy. For lunch, head to Cubbon Pavilion, 
+                             a fantastic eatery offering delicious food options. Afterward, take a leisurely stroll through Cubbon Park, another popular 
+                             attraction in the city, known for its greenery and peaceful atmosphere. End your day with a delightful dinner at The Raj Pavilion,
+                              a renowned eatery known for its scrumptious cuisine. Enjoy your first day in Bengaluru!
+                        </p>
+                        <li>Lalbagh Botanical Garden</li>
+                        <li>The story of Tipu Sultan</li>
+                        <li>Cubbon Pavilion</li>
+                        <li>Cubbon Park</li>
+                        <li>The Raj Pavilion</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="slide green">
+                    <h2>DAY 2</h2>
+                    <p class="tip">On the second day of your trip to Bengaluru, India, you have a fantastic itinerary lined up! Your first stop is Koshy's Bar & Restaurant,
+                        a must-visit eatery known for its delicious food and charming ambiance. After enjoying a scrumptious meal, head over to Commercial Street, 
+                        a popular attraction for shopping enthusiasts. Explore the vibrant markets and indulge in some retail therapy. Next, visit Vidyarthi Bhavan,
+                         another renowned eatery famous for its traditional South Indian breakfast. 
+                         Savor the authentic flavors and experience the local culinary culture. In the afternoon, make your way to Royal Meenakshi Mall, 
+                         where you can shop for both local and international brands. Lastly, visit The Forum Koramangala Mall, a bustling attraction with a wide 
+                         range of stores and entertainment options. Enjoy exploring this vibrant city and have a fantastic day!
+                   </p>
+                   <li>Koshy's Bar & Restaurant</li>
+                   <li>Commercial Street</li>
+                   <li>Vidyarthi Bhavan</li>
+                   <li>Royal Meenakshi Mall</li>
+                   <li>The Forum Koramangala Mall</li>
+                    <p></p>
+                </div>
+                <div class="slide purple">
+                    <h2>DAY 3</h2>
+                    <p class="tip">On the third day of your trip to Bengaluru, India, you have an exciting itinerary ahead! Start your day with a visit to the 
+                        Bangalore Fort heritage walk, where you can explore the rich history and architectural marvels. Next, head over to the Visvesvaraya
+                         Industrial and Technological Museum, a must-see attraction for science enthusiasts. After working up an appetite, indulge in a 
+                         delicious meal at MTR 1924, known for its authentic South Indian cuisine. Finally, wrap up your day at the National Gallery of Modern Art, 
+                         where you can admire contemporary artworks and immerse yourself in the vibrant art scene. Get ready for a day filled with history, 
+                         culture, and great food!
+                    </p>
+                    <li>Bangalore Fort heritage walk</li>
+                    <li>Visvesvaraya Industrial and Technological Museum</li>
+                    <li>MTR 1924</li>
+                    <li>National Gallery of Modern Art</li>
+                </div>
+            
+        <div class="flex-item flex-item-25"></div>
+        {% endif %}
+
+
+
+        {% if location == 'Udupi' %}
+        <div class="flex-item flex-item-75">
+            <div class="scroll-snap-card">
+                <div class="slide red">
+                    <p class="tip">
+                        <h2>SUMMARY</h2>
+                        <p>Udupi, a coastal town in India, is a perfect destination for your 2-day solo trip in April.
+                            Known for its vibrant culture and rich history, Udupi offers a delightful mix of must-see attractions, 
+                            cultural landmarks, and great food. Explore the ancient temples and intricate carvings that showcase the 
+                            region's religious significance. Immerse yourself in the local traditions and witness the vibrant festivals 
+                            that take place during this time of the year.
+                       </p>
+                       <ul>
+                           <li>Place to stay
+                               Samanvay Boutique Hotel ₹6,159 (094480 11111)
+                               Kinnimulki Main Road Near Govinda Kalyana Mantapa, Udupi 576101 India
+                           </li> 
+                              <li> 2> Wild Woods Spa and Resort ₹4,500 (9876543210)
+                               Kundapur Taluk Near Mangalore, Udupi 576214 India
+                           </li>
+                       </ul>
+                    
+                        
+                        </p>
+                </div>
+                <div class="slide blue">
+                    <p class="tip">
+                        <h2>DAY 1</h2>
+                        <p>
+                            Welcome to Udupi, India! Get ready for an exciting first day filled with must-see attractions, cultural landmarks, 
+                            and great food. To start off your day, head to Woodlands Restaurant, a popular eatery known for its delicious vegetarian cuisine.
+                             After satisfying your taste buds, make your way to Chandramoulishwar Temple, a stunning attraction with intricate architecture and 
+                             a peaceful ambience. For your next meal, visit Hotel New Shanthi Sagar, another fantastic eatery offering a variety of flavorful dishes.
+                              Continue your cultural exploration by visiting Ananteshwar Temple, where you can admire the beautiful sculptures and soak in the 
+                              spiritual atmosphere. Lastly, don't miss the iconic Sri Krishna Temple, a must-visit attraction known for its rich history and 
+                              religious significance. Enjoy your first day in Udupi!
+                        </p>
+                        <li>Woodlands Restaurant</li>
+                        <li>Chandramoulishwar Temple</li>
+                        <li>Hotel New Shanthi Sagar</li>
+                        <li>Ananteshwar Temple</li>
+                        <li>Sri Krishna Temple</li>
+                    </p>
+                </div>
+                <div class="slide green">
+                    <h2>DAY 2</h2>
+                    <p class="tip">On the second day of your trip to Udupi, India, there are some fantastic locations to visit based on your preferences. 
+                        First, head to St. Mary's Island, a must-see attraction known for its breathtaking natural beauty. Explore the pristine beaches 
+                        and unique rock formations on the island. Afterward, satisfy your taste buds at Thimmappa Fish Hotel, a renowned eatery where you 
+                        can indulge in delicious seafood dishes. Next, visit Kodi Beach, another captivating attraction known for its serene surroundings
+                        and picturesque views. For lunch, dine at Diana Restaurant, a popular eatery offering a variety of local and international cuisines. 
+                        Lastly, make your way to Malpe Beach, a beautiful attraction where you can relax, soak up the sun, and enjoy the tranquil atmosphere.
+                        Enjoy your second day in Udupi!
+                    </p>
+                    <li>St. Mary's Island</li>
+                    <li>Thimmappa Fish Hotel</li>
+                    <li>Kodi Beach</li>
+                    <li>Diana Restaurant</li>
+                    <li>Malpe Beach</li>
+                    <p></p>
+                </div>
+        <div class="flex-item flex-item-25"></div>
+        {% endif %}
+
+
+
+        {% if location == 'Shimoga' %}
+        <div class="flex-item flex-item-75">
+            <div class="scroll-snap-card">
+                <div class="slide red">
+                    <p class="tip">
+                        <h2>SUMMARY</h2>
+                        <p>Shimoga is a captivating destination in India that offers a myriad of experiences. With its breathtaking natural beauty,
+                            vibrant culture, and rich history, you are in for a treat. Explore the must-see attractions that will leave you in awe of
+                            their beauty and significance. Indulge in the local cuisine, known for its mouthwatering flavors and diverse range of dishes.                 
+                        </p>
+                        <ul>
+                            <li>Place to stay
+                                1> Royal Orchid Central, Shimoga  ₹3,227 (9415786651)
+                                BH Road Opposite Vinayak Theatre, Shimoga 577201 India
+                            </li> 
+                               <li> 2> Green View Clarks Inn ₹2,399 (9965422151)
+                                    Balraj Urs Road Near railway station, Shimoga 577201 India
+                            </li>
+                        </ul>
+                        </p>
+                </div>
+                <div class="slide blue">
+                    <p class="tip">
+                        <h2>DAY 1</h2>
+                        <p>
+                            Welcome to Shimoga, India! Your first day in this beautiful destination is going to be exciting and filled with amazing experiences.
+                            To start off, visit the Sharavati River, a must-see attraction known for its breathtaking views and serene surroundings. 
+                            Next, head to the Shivappanaika Palace Museum, where you can explore the rich history and culture of the region. 
+                            After a morning of sightseeing, satisfy your taste buds at the Rice Bowl Restaurant, known for its delicious local cuisine. 
+                            In the afternoon, make your way to Keladi, another popular attraction that showcases the architectural beauty of the region. 
+                            Finally, end your day at Kanauj Restaurant, where you can indulge in some great food before retiring for the night.
+                             Enjoy your first day in Shimoga!
+                        </p>
+                        <li>Sharavati River</li>
+                        <li>Shivappanaika Palace Museum</li>
+                        <li>Rice Bowl Restaurant</li>
+                        <li>Keladi</li>
+                        <li>Kanauj Restaurant</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="slide green">
+                    <h2>DAY 2</h2>
+                    <p class="tip">
+                        On your second day in Shimoga, you can start by visiting Hidlumane falls, a must-see attraction known for its natural 
+                        beauty and serene environment. Take a leisurely stroll and immerse yourself in the stunning surroundings. Afterward, 
+                        head to the Tiger and Lion Safari, Shimoga, another popular attraction where you can spot various wildlife species up close. 
+                        It's a thrilling experience that you wouldn't want to miss. For lunch, you can dine at Hotel Shubham, a great eatery known 
+                        for its delicious local cuisine. After satisfying your taste buds, make your way to Tunga Anicut Dam, a picturesque spot where 
+                        you can enjoy the scenic views and relax. Finally, end your day at Hotel Jai Maata Grandeur, a fantastic eatery where you can 
+                        ndulge in mouthwatering dishes and unwind after an exciting day of exploration.
+                    </p>
+                    <li>Hidlumane falls</li>
+                    <li>Tiger and Lion Safari, Shimoga</li>
+                    <li>Hotel Shubham</li>
+                    <li>Tunga Anicut Dam</li>
+                    <li>Hotel Jai Maata Grandeur</li>
+                </div>
+        <div class="flex-item flex-item-25"></div>
+        {% endif %}
+
+
+
+        {% if location == 'Kolkata' %}
+        <div class="flex-item flex-item-75">
+            <div class="scroll-snap-card">
+                <div class="slide red">
+                    <p class="tip">
+                        <h2>SUMMARY</h2>
+                        <p><p>Your trip to Kolkata (Calcutta) for 3 days
+                            Kolkata, also known as Calcutta, is a vibrant city in India that offers a rich cultural experience. 
+                            With its must-see attractions, hidden gems, and cultural landmarks, it is a perfect destination for a 
+                            solo traveler like you. The city is known for its beautiful riverfront and gardens, providing serene 
+                            spots for relaxation and exploration.                
+                        </p>
+                        <ul>
+                            <li>Place to stay
+                                1> Holiday Inn Kolkata Airport, an IHG Hotel ₹4,634 (080005 01395)
+                                Biswa Bangla Sarani, Rajarhat Near City Centre 2, Kolkata (Calcutta) 700136 India
+                            </li> 
+                               <li> 2> Hotel De Sovrani ₹3,579 (1234567890)
+                                    DD 21 Saltlake City Sector I, Kolkata (Calcutta) 700064 India
+                            </li>
+                        </ul>
+                        <p>
+                        </p>
+                </div>
+                <div class="slide blue">
+                    <p class="tip">
+                        <h2>DAY 1</h2>
+                        <p>
+                            Welcome to Kolkata! Today is your first day of your trip and you have a fantastic itinerary ahead of you.
+                            First, make your way to the iconic Howrah Bridge, a must-see attraction that offers breathtaking views of the 
+                            Hooghly River. After that, head over to the Victoria Memorial Hall, a cultural landmark that showcases the city's 
+                            rich history. For lunch, indulge in delicious Bengali cuisine at Oh! Calcutta, a hidden gem known for its authentic flavors.
+                             In the afternoon, visit the Indian Museum (Jadu Ghar), where you can explore fascinating exhibits and artifacts. 
+                             Finally, end your day at 6 Ballygunge Place, a popular eatery that serves delectable Bengali dishes. 
+                             Enjoy your first day exploring the vibrant city of Kolkata!
+                        </p>
+                        <li>Howrah Bridge</li>
+                        <li>Victoria Memorial Hall</li>
+                        <li>Oh! Calcutta</li>
+                        <li>Indian Museum (Jadu Ghar)</li>
+                        <li>6 Ballygunge Place</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="slide green">
+                    <h2>DAY 2</h2>
+                    <p class="tip">On the second day of your trip to Kolkata, start your day by visiting the Grand Market Pavilion, a popular eatery known 
+                        for its delicious local cuisine. Enjoy a hearty breakfast and soak in the vibrant atmosphere of the market. 
+                        After breakfast, head to St. Paul's Cathedral, a must-see attraction in the city. Marvel at the stunning architecture and
+                         explore the serene surroundings. For lunch, make your way to Kewpie's, another renowned eatery famous for its traditional 
+                         Bengali dishes. After a satisfying meal, visit Outram ghat, a beautiful riverside attraction where you can enjoy a leisurely 
+                         stroll and take in the scenic views. End your day at Eden Gardens, a historic cricket stadium and a cultural landmark. 
+                         Explore the grounds and catch a match if there's one scheduled. It will be a day filled with delicious food, cultural experiences, 
+                         and picturesque views.
+                    </p>
+                    <li>Grand Market Pavilion</li>
+                    <li>St. Paul's Cathedral</li>
+                    <li>Kewpie's</li>
+                    <li>Outram ghat</li>
+                    <li>Eden Gardens</li>
+                </div>
+                <div class="slide purple">
+                    <h2>DAY 3</h2>
+                    <p class="tip">On the third day of your trip to Kolkata, get ready for another exciting day of exploration! Start your day 
+                        by visiting the magnificent Marble Palace, a must-see attraction known for its stunning architecture and art 
+                        collection. Afterward, head to the iconic Indian Coffee House, a hidden gem where you can enjoy a cup of delicious 
+                        coffee and soak in the local atmosphere. Next, make your way to College Street (Boi Para), a cultural landmark renowned 
+                        for its bookstores and vibrant atmosphere. Take a leisurely stroll and browse through the wide range of books available.
+                         In the afternoon, make your way to Park Street, a popular attraction known for its lively restaurants, cafes, and nightlife.
+                          Indulge in some local cuisine and enjoy the vibrant ambiance. Finally, end your day at Bhoj Company Restaurant, 
+                          where you can savor delicious Indian dishes and unwind after a day of exploration. Enjoy your time in Kolkata!
+                    </p>
+                    <li>Marble Palace</li>
+                    <li>SIndian Coffee House</li>
+                    <li>College Street (Boi Para)</li>
+                    <li>Park Street</li>
+                    <li>Bhoj Company Restaurant</li>
+                </div>
+        <div class="flex-item flex-item-25"></div>
+        {% endif %}
+
+
+
+        {% if location == 'Asansol' %}
+        <div class="flex-item flex-item-75">
+            <div class="scroll-snap-card">
+                <div class="slide red">
+                    <p class="tip">
+                        <h2>SUMMARY</h2>
+                        <p>Asansol is a vibrant city in India that offers a blend of must-see attractions, great food, and rich culture. 
+                            This destination is perfect for solo travelers like you who are seeking a diverse experience. In April, the weather
+                             is pleasant, allowing you to explore the city comfortably. Asansol is known for its historical landmarks, beautiful parks,
+                              and bustling markets where you can find delicious local cuisine.
+                        </p>
+                        <ul>
+                            <li>Place to stay
+                                1> The Fern Residency Asansol  ₹3,639  (1800180011)
+                                Burnpur Road Galaxy Mall, Asansol 713 325 India
+                            </li> 
+                               <li> 2> Hotel The Signature Asansol  ₹2,098  (1800180022)
+                                    173/1 GT Road , Ushagram near B B College, Asansol 713303 India
+                            </li>
+                        </ul>
+                        </p>
+                </div>
+                <div class="slide blue">
+                    <p class="tip">
+                        <h2>DAY 1</h2>
+                        <p>
+                            Welcome to Asansol, India! Get ready for an incredible day filled with amazing attractions, delicious food, 
+                    and cultural experiences. To start off your day, head to Sentrum Mall, a must-see attraction where you can shop,
+                     explore, and enjoy the vibrant atmosphere. After working up an appetite, make your way to Bay Leaf Restaurant,
+                     known for its great food and diverse menu options. Once you're fueled up, immerse yourself in the spiritual side
+                      of Asansol by visiting Ghagar Buri Chandi Temple and Kalyaneshwari Temple, both beautiful attractions that showcase 
+                      the rich culture of the region. Finally, end your day at Sagourab Hotel & Restaurant, a popular eatery where you can
+                       indulge in more delicious local cuisine. Enjoy your first day in Asansol!
+                </p>
+                <li>Sentrum Mall</li>
+                <li>Bay Leaf Restaurant</li>
+                <li>Ghagar Buri Chandi Temple</li>
+                <li>Kalyaneshwari Temple</li>
+                <li>Sagourab Hotel & Restaurant</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="slide green">
+                    <h2>DAY 2</h2>
+                    <p class="tip">On your second day in Asansol, India, you have a great itinerary lined up! Start your day by visiting Galaxy Mall, 
+                        a must-see attraction in the city. Explore the various shops and enjoy the vibrant atmosphere. Next, head to Spandan
+                         Recreation Park, another popular attraction known for its beautiful gardens and recreational activities. 
+                         Take a leisurely stroll and immerse yourself in the serene surroundings. Afterward, make your way to Nehru Park, 
+                         where you can relax and enjoy nature. The park offers lush greenery and a peaceful environment. In the evening, 
+                         treat yourself to a delicious meal at Lemon Grass Restaurant, known for its great food. Indulge in the flavors of 
+                         Indian cuisine and savor the culinary delights. Enjoy your day exploring these amazing attractions and experiencing the local culture!
+                    </p>
+                    <li>Galaxy Mall</li>
+                    <li>Spandan Recreation Park</li>
+                    <li>Nehru Park</li>
+                    <li> Lemon Grass Restaurant</li>
+                </div>
+                <div class="slide purple">
+                    <h2>DAY 3</h2>
+                    <p class="tip">On the third day of your trip to Asansol, India, get ready for another exciting day filled with amazing experiences! 
+                        Start your day by indulging in delicious local cuisine at Durga Foods, a popular eatery known for its mouthwatering dishes.
+                         After satisfying your taste buds, head over to KFC, another renowned eatery, to relish some international flavors. 
+                         Whether you're a fan of their famous fried chicken or want to try their signature burgers, KFC won't disappoint! 
+                         Enjoy the vibrant atmosphere and savor every bite of your meal. Make sure to take some time to explore the surrounding
+                          area and soak in the local culture. With these fantastic food options, your third day in Asansol is bound to be a memorable one!
+                    </p>
+                    <li>Durga Foods</li>
+                    <li>KFC</li>
+                </div>
+        <div class="flex-item flex-item-25"></div>
+        {% endif %}
+
+
+
+        {% if location == 'Raiganj' %}
+        <div class="flex-item flex-item-75">
+            <div class="scroll-snap-card">
+                <div class="slide red">
+                    <p class="tip">
+                        <h2>SUMMARY</h2>
+                        <p>Raiganj, located in India, is a delightful destination for your solo trip. With a plethora of must-see 
+                            attractions, breathtaking outdoors, and delectable food, this place has something for everyone. 
+                            Explore the cultural landmarks and historical sites that dot the city, immersing yourself in its rich heritage. 
+                            Indulge in outdoor activities like trekking, hiking, or simply enjoying the serene natural beauty that surrounds you. 
+                        </p>
+                        <ul>
+                            <li>Place to stay
+                                1> Vinayak Hotel ₹3,000 (9876543210)
+                                371, M.G. Road Uttar Dinajpur, Raiganj India
+                            </li> 
+                               <li> 2> OYO 45580 Gitanjali Hotel ₹1,234 (0123456789)
+                                    Bhagat Singh Market Ukilpara, Raiganj 733134 India
+                            </li>
+                        </ul>
+                        </p>
+                </div>
+                <div class="slide blue">
+                    <p class="tip">
+                        <h2>DAY 1</h2>
+                        <p>
+                            Welcome to Raiganj, India! Get ready for an exciting first day filled with must-see attractions, outdoor adventures, 
+                            and delicious food. Your itinerary for the day is as follows: 1. Burhana Fakir Mosque: Start your day by visiting this
+                             magnificent mosque. Marvel at the stunning architecture and learn about its historical significance. Don't forget to capture 
+                             some memorable photos! 2. Badshah Hotel & Restaurant: Enjoy a scrumptious lunch at this popular eatery. Indulge in local 
+                             delicacies and experience the authentic flavors of Raiganj. The friendly staff and cozy ambiance will make your dining 
+                             experience even more delightful. 3. Raiganj Wildlife Sanctuary: Spend your afternoon exploring the beautiful wildlife sanctuary. 
+                             Immerse yourself in nature as you spot various species of birds, animals, and plants. Take a leisurely walk or go for a 
+                             thrilling safari to make the most of your visit. End your first day with a satisfied stomach and unforgettable memories. 
+                             Get ready for more exciting adventures on your upcoming days in Raiganj!
+                        </p>
+                        <li>Burhana Fakir Mosque</li>
+                        <li>Badshah Hotel & Restaurant</li>
+                        <li>Raiganj Wildlife Sanctuary</li>
+                    </ul>
+                    </p>
+                </div>
+        <div class="flex-item flex-item-25"></div>
+        {% endif %}
+    </div>
+    </div>
+</div class="flex-item flex-item-25">
+<br><br><br><br><br><br>
+{% endblock content %}

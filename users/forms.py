@@ -47,11 +47,17 @@ class TravelPlanForm(forms.ModelForm):
     ]
 
     Location = [
-        ('Gujrat', 'Gujrat'),
-        ('West Bengal','West Bengal'),
-        ('Jammu','Jammu'),
-        ('Karnatka','Karnatka'),
+        ('Ahmedabad', 'Ahmedabad'),
+        ('Vadodara', 'Vadodara'),
+        ('Jamnagar', 'Jamnagar'),
+        ('Bengaluru', 'Bengaluru'),
+        ('Udupi', 'Udupi'),
+        ('Shimoga', 'Shimoga'),
+        ('Kolkata', 'Kolkata'),
+        ('Asansol', 'Asansol'),
+        ('Raiganj', 'Raiganj'),
     ]
+
 
     categories = forms.MultipleChoiceField(choices=CATEGORIES_CHOICES, widget=forms.CheckboxSelectMultiple)
     price = forms.ChoiceField(choices=Prices)

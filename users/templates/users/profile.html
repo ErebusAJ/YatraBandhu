@@ -12,26 +12,49 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Optional: Add your custom CSS here -->
     <style>
-        /* Add custom styles if needed */
+        /* Custom styles */
+        .dark-container {
+            background-color: #343a40; /* Dark background color */
+            padding: 20px; /* Add padding */
+            border-radius: 10px; /* Add border radius */
+            margin-bottom: 20px; /* Add margin */
+            margin-top: 19px;
+            color: #fff; /* Text color */
+            height: 600px;
+            width: 500px;
+        }
+        .dark-container1 {
+            background-color: #343a40; /* Dark background color */
+            padding: 20px; /* Add padding */
+            border-radius: 10px; /* Add border radius */
+            margin-bottom: 15px; /* Add margin */
+            color: #fff; /* Text color */
+            height: 600px;
+            width: 500px;
+        }
+        .account-heading {
+            font-size: 35px; /* Adjust the font size as needed */
+            font-weight: bold; /* Make the text bold */
+        }
     </style>
 </head>
 <body>
     <br><br><br><br>
     <div class="container mt-5">
         <!-- Profile Card -->
-        <div class="card">
+        <div class="dark-container">
             <div class="media">
-                <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+                <!-- <img class="rounded-circle account-img" src="{{ user.profile.image.url }}"> -->
                 <div class="media-body">
                     <h2 class="account-heading">{{ user.username }}</h2>
                     <p class="text-secondary">{{ user.email }}</p>
                 </div>
             </div>
-            <a class="btn btn-info mb-3" href="{% url 'profile-update' %}">Update Profile</a>
+            <a class="btn btn-warning mb-3" href="{% url 'profile-update' %}">Update Profile</a>
         </div>
         
         <!-- Received Interest Requests -->
-        <div class="card mt-4">
+        <div class="dark-container mt-4">
             <h2>Received Interest Requests</h2>
             {% if received_requests %}
                 <ul>

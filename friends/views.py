@@ -8,9 +8,9 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def user_list(request):
     users = User.objects.all()
-    travel = TravelPlan.objects.all()
+    travels = TravelPlan.objects.all()
     friendships = Friendship.objects.filter(from_user=request.user)
-    return render(request, 'friends/user_list.html', {'users': users, 'friendships': friendships, 'plans': travel})
+    return render(request, 'friends/user_list.html', {'users': users, 'friendships': friendships, 'travels': travels})
 
 
 @login_required

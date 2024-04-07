@@ -13,23 +13,38 @@
     <!-- Optional: Add your custom CSS here -->
     <style>
         /* Add custom styles if needed */
+        .container-interest{
+            background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+            width: 50%;
+            margin-left: 25%;
+            margin-top: 10%;
+        }  
+
+        .pimg{
+            z-index: -1;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            margin-top: -100px;
+        }
     </style>
 </head>
 <body>
     <br><br><br><br>
     <br><br><br>
-    <div class="container mt-5"> <!-- Use Bootstrap container class for layout -->
+    <img src="{% static 'friends/bg.jpeg' %}" class="pimg">
+    <div class="container-interest"> <!-- Use Bootstrap container class for layout -->
         <h1>Send Interest</h1>
         <form method="post">
             {% csrf_token %}
             <p>Send an interest request to {{ to_user.username }}</p>
-            <button type="submit" class="btn btn-primary">Send Interest</button> <!-- Use Bootstrap button classes -->
+            <button type="submit" class="btn btn-secondary">Send Interest</button> <!-- Use Bootstrap button classes -->
         </form>
     </div>
-    <br><br><br>
-    <br><br><br>
-    <br><br><br>
-    <br><br><br>
+    <br><br><br><br>
     <br><br><br>
     <br><br><br>
     <br><br><br>

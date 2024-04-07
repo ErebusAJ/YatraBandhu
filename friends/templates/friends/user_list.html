@@ -3,34 +3,107 @@
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>yatra</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js"></script>
     <style>
-        .travellers {
-            max-width: 800px; /* Set your desired max-width */
-            margin: 0 auto; /* Center the container */
-            padding: 20px; /* Add some padding */
-            border: 1px solid #ccc; /* Add a border for visualization */
-            border-radius: 10px; /* Add some border radius */
-            background-color: #f9f9f9; /* Add a background color */
-            margin-bottom: 20px;
-            margin-top: 30px;
+        .list_bg {
+            background-image: url("{% static 'friends/bg.jpeg' %}");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .A {
+            background-color: #00000028;
+        }
+
+        .B {
+            background-color: #00000015;
+        }
+
+        .C {
+            background-color: #00000015;
+        }
+
+        .scroll-snap-card1 {
+            height: 500px;
+            width: 700px;
+            scroll-snap-type: y mandatory;
+            scroll-snap-type: x block;
+            overflow: auto;
+            border-radius: 10px;
+            margin-left: 26%;
+            overflow-x: hidden;
+            margin-top: 10%;
+        }
+
+        .scroll-snap-card1 .slide {
+            width: 100%;
+            height: 100%;
+            scroll-snap-align: start;
+            display: block;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .scroll-snap-card1 .slide {
+            font-size: 1em;
+            color: white;
+            font-weight: 700;
+            padding: 20px;
+
+        }
+
+        .scroll-snap-card1 p {
+            font-size: 1em;
+            color: white;
+            font-weight: 700;
+            padding: 20px;
+            margin-left: 7%;
+
+        }
+
+        .scroll-snap-card1 h2 {
+            font-size: 1.5em;
+            color: rgb(0, 0, 0);
+            font-weight: 700;
+            padding: 20px;
+
+            text-align: center;
+
         }
     </style>
+
+
 </head>
-<body>
-    <br><br><br><br>
-    <div> <!-- Add the container div here -->
-        {% for user in users %}
-            <div class="travellers">
-                <h1 >{{ user.username }}</h1>
-                <a href="{% url 'send-interest' user.id %}"> Send Request</a>
+
+<body class="list_bg">
+
+    <div class="scroll-snap-card1">
+        {% for travel in travels %}
+        {% if travel.user != request.user %}
+            <div class="slide A">
+                <h2>{{ travel.user }}</h2>
+                <p class="tip1">{{ travel.location }}</p>
+                <p class="tip1">{{ travel.date_from }}</p>
+                <p class="tip1">{{ travel.date_to }}</p>
+                <p class="tip1">{{ travel.additional_info }}</p>
+                <button>
+                    <a href="{% url 'send-interest' travel.user.id %}">Send Request</a>
+                </button>
             </div>
+        {% endif %}
         {% endfor %}
     </div>
-</body>
-</html>
 <br><br><br><br><br><br><br><br>
+<br><br>
 {% endblock content %}

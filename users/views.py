@@ -12,7 +12,6 @@ def register(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            messages.success(request, f'Account created for {username}! You can now login.')
             return redirect('login')
     else:
         form = UserRegisterForm()
@@ -51,11 +50,14 @@ def home(request):
             travel_plan = form.save(commit=False)
             travel_plan.user = request.user  
             travel_plan.save()  
-            messages.success(request, f'Travel plan created successfully')
+            # Get the selected location from the form
+            location = form.cleaned_data.get('location')
+            print(location)
+            # Pass the selected location to the template
+            return render(request, 'users/trip_plan.html', {'form': form, 'location': location})
     else:
         form = TravelPlanForm()
     return render(request, 'users/home.html', {'form': form})
-
 
 def contact(request):
     return render(request, 'users/contact.html')
@@ -93,4 +95,6 @@ def reject_friend_request(request, friendship_id):
     friendship.delete()  # Or mark it as rejected if you want to keep the record
     return redirect('profile')  # Redirect to the user's profile page
 
-    
+
+def trip(request):
+    return render(request, 'users/trip_plan.html')
